@@ -85,7 +85,7 @@
 	<script type="text/javascript">
 		$('#submit').click(function(event){    
 		  event.preventDefault();     
-		  var exist_response = $.ajax({type:"GET",url:"http://127.0.0.1:5000/predict",data:"age="+$('#age').val()+"&sex="+$('#sex').val()+"&bmi="+$('#bmi').val()+"&children="+$('#children').val()+"&smoker="+$('#smoker').val()+"&region="+$('#region').val(),async: false}).responseText;
+		  var exist_response = $.ajax({type:"GET",url:"https://ml-flask-analysis-01.herokuapp.com/predict",data:"age="+$('#age').val()+"&sex="+$('#sex').val()+"&bmi="+$('#bmi').val()+"&children="+$('#children').val()+"&smoker="+$('#smoker').val()+"&region="+$('#region').val(),async: false}).responseText;
 		  $('#output').text("Prédiction des vos charges médicaux est : "+ String(parseInt(exist_response.split(".")[0]) ) + " $");
 		});
 	</script>
